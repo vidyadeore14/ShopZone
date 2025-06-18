@@ -1,0 +1,48 @@
+<!-- ShopZone/payment.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment - ShopZone</title>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+  <h2>Processing Payment...</h2>
+
+  <script>
+    const userDetails = JSON.parse(localStorage.getItem('userDetails'));
+    
+    // Fallback in case data is missing
+    if (!userDetails) {
+      alert("Missing user details. Redirecting to checkout.");
+      window.location.href = "checkout.html";
+    }
+
+    const options = {
+      "key": "rzp_test_TJeVu81mIrobwz", // ✅ Razorpay Test Key
+      "amount": 50000, // ₹500 in paisa
+      "currency": "INR",
+      "name": "ShopZone",
+      "description": "Test Transaction",
+      "handler": function (response){
+        alert("✅ Payment Successful!\nPayment ID: " + response.razorpay_payment_id);
+        window.location.href = "order-confirmed.html";
+      },
+      "prefill": {
+        "name": userDetails.name,
+        "email": "test@example.com",  // test email
+        "contact": userDetails.phone
+      },
+      "notes": {
+        "address": userDetails.address
+      },
+      "theme": {
+        "color": "#3399cc"
+      }
+    };
+
+    var rzp = new Razorpay(options);
+    rzp.open();
+  </script>
+</body>
+</html>
+

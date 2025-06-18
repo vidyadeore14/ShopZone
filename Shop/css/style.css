@@ -1,0 +1,56 @@
+/* General body settings */
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar branding */
+.navbar-brand {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Card customization */
+.card {
+  transition: transform 0.2s ease-in-out;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Footer styling */
+footer {
+  background-color: #343a40;
+  color: #fff;
+}
+
+/* Form inputs */
+input[type="email"],
+input[type="password"],
+input[type="text"],
+textarea {
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+}
+
+/* Button effects */
+.btn-primary,
+.btn-success {
+  border-radius: 8px;
+  padding: 8px 20px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* Section headings */
+h2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}

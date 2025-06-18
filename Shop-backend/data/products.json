@@ -1,0 +1,39 @@
+[
+  {
+    "id": "c1",
+    "category": "clothing",
+    "name": "T-Shirt",
+    "price": 999,
+    "details": "Comfortable cotton T-shirt",
+    "history": "Launched in Summer 2024",
+    "image": "/images/clothing1.jpg"
+  },
+  {
+    "id": "c2",
+    "category": "clothing",
+    "name": "Jeans",
+    "price": 999,
+    "details": "Comfortable cotton T-shirt",
+    "history": "Launched in Summer 2024",
+    "image": "/images/clothing1.jpg"
+  },
+  {
+    "id": "f1",
+    "category": "footwear",
+    "name": "Sneakers",
+    "price": 1299,
+    "details": "Lightweight running shoes",
+    "history": "Best seller in 2023",
+    "image": "/images/footwear1.jpg"
+  },
+  {
+    "id": "s1",
+    "category": "souvenirs",
+    "name": "Keychain",
+    "price": 99,
+    "details": "Wooden engraved keychain",
+    "history": "Popular at local fairs",
+    "image": "/images/souvenir1.jpg"
+  }
+  
+]

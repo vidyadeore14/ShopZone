@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login/Register - ShopZone</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="text-center">Register on ShopZone</h2>
+    <form class="mx-auto" style="max-width: 400px;" onsubmit="registerUser(event)">
+      <div class="mb-3">
+        <label>Email:</label>
+        <input type="email" class="form-control" id="regEmail" required>
+      </div>
+      <div class="mb-3">
+        <label>Password:</label>
+        <input type="password" class="form-control" id="regPassword" required>
+      </div>
+      <button type="submit" class="btn btn-success w-100">Register</button>
+    </form>
+
+    <hr class="my-4">
+
+    <h2 class="text-center">Login to ShopZone</h2>
+    <form class="mx-auto" style="max-width: 400px;" onsubmit="loginUser(event)">
+      <div class="mb-3">
+        <label>Email:</label>
+        <input type="email" class="form-control" id="loginEmail" required>
+      </div>
+      <div class="mb-3">
+        <label>Password:</label>
+        <input type="password" class="form-control" id="loginPassword" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Login</button>
+    </form>
+  </div>
+
+  <script>
+  function registerUser(event) {
+    event.preventDefault();
+
+    const email = document.getElementById('regEmail').value;
+    const password = document.getElementById('regPassword').value;
+
+    // ✅ Change 'username' ➡ 'email'
+    fetch('http://localhost:3000/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: "Vidya",  // Optional - Or use input field for name
+        email: email,
+        password: password,
+        address: "Pune"  // Optional - Or use input field for address
+      })
+    })
+    .then(res => res.text())
+    .then(message => {
+      alert(message);
+    })
+    .catch(err => {
+      alert('Error registering user');
+      console.error(err);
+    });
+  }
+
+  function loginUser(event) {
+  event.preventDefault();
+
+  const email = document.getElementById('loginEmail').value;
+  const password = document.getElementById('loginPassword').value;
+
+  fetch('http://localhost:3000/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email, password: password })
+  })
+  .then(res => {
+    if (!res.ok) throw new Error("Invalid credentials");
+    return res.text();
+  })
+  .then(message => {
+    alert(message); // "Login successful"
+    // ✅ Redirect to homepage after login
+    localStorage.setItem("isLoggedIn", "true");  // स्टेट ठेवण्यासाठी
+    window.location.href = "index.html";  // redirect
+  })
+  .catch(err => {
+    alert('Login failed: ' + err.message);
+    console.error(err);
+  });
+}
+
+</script>
+</body>
+</html>

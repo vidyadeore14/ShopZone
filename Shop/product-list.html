@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product List - ShopZone</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">ShopZone</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Login/Register</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <!-- === FILTER UI SECTION === -->
+<div class="container mt-4">
+  <div class="row mb-3">
+    <div class="col-md-4">
+      <label for="countryFilter" class="form-label">Country</label>
+      <select id="countryFilter" class="form-select">
+        <option value="">All Countries</option>
+        <option value="India">India</option>
+        <option value="France">France</option>
+        <option value="China">China</option>
+        <option value="Kenya">Kenya</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label for="stateFilter" class="form-label">State</label>
+      <select id="stateFilter" class="form-select">
+        <option value="">All States</option>
+        <option value="Rajasthan">Rajasthan</option>
+        <option value="Nagaland">Nagaland</option>
+        <option value="Punjab">Punjab</option>
+        <option value="Maharashtra">Maharashtra</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label for="categoryFilter" class="form-label">Category</label>
+      <select id="categoryFilter" class="form-select">
+        <option value="">All Categories</option>
+        <option value="clothing">Clothing</option>
+        <option value="footwear">Footwear</option>
+        <option value="souvenirs">Souvenirs</option>
+        <option value="food">Food</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+
+    <!-- CLOTHING SECTION -->
+    <h2>Clothing</h2>
+    <div class="row">
+      <!-- Clothing 1-10 -->
+      <!-- Repeat this div 10 times for different images -->
+      <!-- You must have images/clothing1.jpg to clothing10.jpg -->
+      <!-- Card layout for each -->
+      <!-- BEGIN Clothing -->
+      <!-- Generate 10 cards -->
+      <!-- Replace index numbers accordingly -->
+      <!-- Example below repeated with correct filenames and titles -->
+      <!-- You can optimize by using loops in backend later -->
+
+      <!-- CLOTHING CARDS -->
+      <!-- Copy-paste structure for each card -->
+      <!-- Begin Clothing Loop -->
+      <!-- 10 cards -->
+      <!-- Clothing Items -->
+      <!-- These go to product-detail.html -->
+      <!-- Replace image, title, and price -->
+      <!-- BEGIN -->
+      <!-- CLOTHING 1 to 10 -->
+      <!-- Start -->
+
+      <!-- Clothing -->
+      <!-- Use Bootstrap col-md-3 for 4 cards per row -->
+
+      <!-- CLOTHING -->
+      <!-- Use for loop or manually paste -->
+      <!-- Now manually writing all 10 -->
+
+      <!-- 10 Clothing Cards -->
+      <!-- Repeat same block, only change number -->
+
+      <!-- START: Clothing -->
+      <!-- Clothing Card Loop -->
+      <!-- Replace number and title accordingly -->
+      <!-- 1 -->
+      <div class="col-md-3 mb-4 product-card"data-country="India" data-state="Maharashtra" data-category="Clothing">
+        <a href="product-detail.html?name=T-Shirt&price=499&image=images/clothing1.jpg&desc=A+comfortable+cotton+T-Shirt+for+everyday+use">
+          <div class="card">
+            <img src="images/clothing1.jpg" class="card-img-top" alt="T-shirt">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">T-shirt</h5>
+              <p class="card-text">Price: ₹999</p>
+              <button class="btn btn-primary add-to-cart"
+        data-name="T-shirt"
+        data-price="999"
+        data-image="images/clothing1.jpg">Add to Cart</button>
+            </div>
+          </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="col-md-3 mb-4 product-card" data-country="India" data-state="Delhi" data-category="Clothing">
+  <div class="card">
+    <a href="product-detail.html?name=Jeans&price=979&image=images/clothing2.jpg&desc=Trendy+denim+jeans+with+a+comfortable+fit">
+      <img src="images/clothing2.jpg" class="card-img-top" alt="Jeans">
+    </a>
+    <div class="card-body">
+      <h5 class="card-title">Jeans</h5>
+      <p class="card-text">Price: ₹979</p>
+      <button class="btn btn-primary add-to-cart-btn" data-name="Jeans" data-price="979" data-image="images/clothing2.jpg">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+      <!-- 3 -->
+      <div class="col-md-3 mb-4 product-card" data-country="India" data-state="Himachal Pradesh" data-category="Clothing">
+      <a href="product-detail.html?name=Jacket&price=959&image=images/clothing3.jpg&desc=Warm+and+stylish+winter+jacket">
+      <div class="card">
+      <img src="images/clothing3.jpg" class="card-img-top" alt="Jacket">
+      </a>
+      <div class="card-body"><h5 class="card-title">Jacket</h5>
+      <p class="card-text">Price: ₹959</p>
+      <button class="btn btn-primary add-to-cart"
+        data-name="Jacket"
+        data-price="959"
+        data-image="images/clothing3.jpg">
+        Add to Cart
+      </button>
+          </div></div></div>
+
+        <!-- 4 -->
+      <div class="col-md-3 mb-4 product-card" data-country="India" data-state="Rajasthan" data-category="Clothing"><a href="product-detail.html?name=Lehenga&price=939&image=images/clothing4.jpg&desc=Elegant+traditional+Lehenga+for+festive+occasions">
+      <div class="card"><img src="images/clothing4.jpg" class="card-img-top" alt="Lehenga">
+        </a>
+      <div class="card-body"><h5 class="card-title">Lehenga</h5><p class="card-text">Price: ₹939</p>
+      <button class="btn btn-primary add-to-cart"
+        data-name="Lehenga"
+        data-price="939"
+        data-image="images/clothing4.jpg">
+        Add to Cart
+      </button>
+      </div></div></div>
+
+      <!-- 5 -->
+      <div class="col-md-3 mb-4 product-card" data-country="India" data-state="Tamil Nadu" data-category="Clothing"><a href="product-detail.html?name=Sarees+from+Maharashtra&price=919&image=images/clothing5.jpg&desc=Traditional+Maharashtrian+Sarees+with+cultural+touch">
+      <div class="card"><img src="images/clothing5.jpg" class="card-img-top" alt="Sarees from Maharashtra">
+      <div class="card-body"><h5 class="card-title">Sarees from Maharashtra</h5>
+        </a>
+      <p class="card-text">Price: ₹919</p>
+      <button class="btn btn-primary add-to-cart"
+        data-name="Sarees from Maharashtra"
+        data-price="919"
+        data-image="images/clothing5.jpg">Add to Cart</button>
+      </div></div></div>
+
+      <!-- 6 -->
+    <div class="col-md-3 mb-4 product-card" data-country="Japan" data-state="Kyoto" data-category="Clothing"><a href="product-detail.html?name=Japanese+Kimono&price=899&image=images/clothing6.jpg&desc=Elegant+Japanese+Kimono+for+festivals">
+    <div class="card"><img src="images/clothing6.jpg" class="card-img-top" alt="Japanese Kimono">
+      </a>
+    <div class="card-body"><h5 class="card-title">Japanese Kimono</h5>
+    <p class="card-text">Price: ₹899</p>
+    <button class="btn btn-primary add-to-cart"
+        data-name="Japanese Kimono"
+        data-price="899"
+        data-image="images/clothing6.jpg">Add to Cart</button>
+    </div></div></div>
+      
+    <!-- 7 -->
+    <div class="col-md-3 mb-4 product-card" data-country="Nigeria" data-state="Lagos" data-category="Clothing"><a href="product-detail.html?name=African+Traditional+Attire&price=879&image=images/clothing7.jpg&desc=Colorful+African+attire+for+ceremonial+use">
+    <div class="card"><img src="images/clothing7.jpg" class="card-img-top" alt="African Traditional Attire">
+      </a>
+    <div class="card-body"><h5 class="card-title">African Traditional Attire</h5>
+    <p class="card-text">Price: ₹879</p>
+    <button class="btn btn-primary add-to-cart"
+        data-name="African Traditional Attire"
+        data-price="879"
+        data-image="images/clothing7.jpg">Add to Cart</button>
+    </div></div></div>
+
+    <!-- 8 -->
+      <div class="col-md-3 mb-4 product-card" data-country="Germany" data-state="Bavaria" data-category="Clothing"><a href="product-detail.html?name=German+Folk+Dress+(Tracht)&price=859&image=images/clothing8.jpg&desc=Traditional+German+Tracht+for+festivals">
+      <div class="card"><img src="images/clothing8.jpg" class="card-img-top" alt="German Folk Dress (Tracht)">
+        </a>
+      <div class="card-body"><h5 class="card-title">German Folk Dress (Tracht)</h5>
+      <p class="card-text">Price: ₹859</p>
+      <button class="btn btn-primary add-to-cart"
+        data-name="German Folk Dress (Tracht)"
+        data-price="859"
+        data-image="images/clothing8.jpg">
+        Add to Cart
+      </button>
+      </div></div></div>
+
+      <!-- 9 -->
+      <div class="col-md-3 mb-4 product-card" data-country="India" data-state="Nagaland" data-category="Clothing"><a href="product-detail.html?name=Tribal+Dress+from+Nagaland&price=839&image=images/clothing9.jpg&desc=Traditional+tribal+attire+of+Nagaland,+India">
+      <div class="card"><img src="images/clothing9.jpg" class="card-img-top" alt="Tribal Dress from Nagaland, India">
+        </a>
+      <div class="card-body"><h5 class="card-title">Tribal Dress from Nagaland, India</h5>
+      <p class="card-text">Price: ₹839</p>
+      <button class="btn btn-primary add-to-cart"
+        data-name="Tribal Dress from Nagaland, India"
+        data-price="839"
+        data-image="images/clothing9.jpg">
+        Add to Cart
+      </button>
+      </div></div></div>
+      
+      <!-- 10 -->
+      <div class="col-md-3 mb-4 product-card" data-country="China" data-state="Beijing" data-category="Clothing"><a href="product-detail.html?name=Traditional+Chinese+Hanfu&price=819&image=images/clothing10.jpg&desc=Graceful+Hanfu+from+ancient+Chinese+culture">
+      <div class="card"><img src="images/clothing10.jpg" class="card-img-top" alt="Traditional Chinese Hanfu">
+        </a>
+      <div class="card-body"><h5 class="card-title">Traditional Chinese Hanfu</h5>
+      <p class="card-text">Price: ₹819</p>
+      <button class="btn btn-primary add-to-cart"
+        data-name="Traditional Chinese Hanfu"
+        data-price="819"
+        data-image="images/clothing10.jpg">
+        Add to Cart
+      </button>
+      </div></div></div>
+    </div>
+
+    <!-- FOOTWEAR SECTION -->
+    <h2>Footwear</h2>
+    <div class="row">
+      <!-- 10 Footwear Cards -->
+      <!-- Change src to footwear#.jpg and title accordingly -->
+      <!-- Paste below -->
+      <!-- Start -->
+      <!-- Same format -->
+
+      <!-- 1 -->
+      <div class="col-md-3 mb-4 product-card"data-country="India" data-state="Gujarat" data-category="Footwear"><a href="product-detail.html?name=Women's+Heels+%26+Formal+Shoes+Collection&price=1099&image=images/footwaer1.jpg&desc=Elegant+heels+and+formal+shoes+perfect+for+parties+or+office">
+      <div class="card"><img src="images/footwaer1.jpg" class="card-img-top" alt="Women's Heels & Formal Shoes Collection">
+        </a>
+      <div class="card-body"><h5 class="card-title">Women's Heels & Formal Shoes Collection</h5>
+      <p class="card-text">Price: ₹1099</p>
+      <button class="btn btn-primary add-to-cart"
+        data-name="Women's Heels & Formal Shoes Collection"
+        data-price="1099"
+        data-image="images/footwaer1.jpg">
+        Add to Cart
+      </button>
+      </div></div></div>
+
+      <!-- 2 -->
+      <div class="col-md-3 mb-4 product-card" data-country="India" data-state="Rajasthan" data-category="Footwear"><a href="product-detail.html?name=Casual+Slip-Ons+%26+Flats&price=1079&image=images/footwaer2.jpg&desc=Comfortable+casual+slip-ons+and+flats+for+daily+wear">
+      <div class="card"><img src="images/footwaer2.jpg" class="card-img-top" alt="Casual Slip-Ons & Flats">
+      </a>
+      <div class="card-body"><h5 class="card-title">Casual Slip-Ons & Flats</h5>
+      <p class="card-text">Price: ₹1079</p>
+      <button class="btn btn-primary add-to-cart"
+        data-name="Casual Slip-Ons & Flats"
+        data-price="1079"
+        data-image="images/footwaer2.jpg">
+        Add to Cart
+      </button>
+      </div></div></div>
+
+      <!-- 3 -->
+      <div class="col-md-3 mb-4 product-card" data-country="Thailand" data-state="Bangkok" data-category="Footwear"><a href="product-detail.html?name=Striped+Flip-Flops&price=1059&image=images/footwaer3.jpg&desc=Lightweight+striped+flip-flops+for+beach+or+home+use">
+        <div class="card"><img src="images/footwaer3.jpg" class="card-img-top" alt="Striped Flip-Flops">
+          </a>
+          <div class="card-body"><h5 class="card-title">Striped Flip-Flops</h5>
+            <p class="card-text">Price: ₹1059</p>
+            <button class="btn btn-primary add-to-cart"
+        data-name="Striped Flip-Flops"
+        data-price="1059"
+        data-image="images/footwaer3.jpg">
+        Add to Cart
+      </button>
+          </div></div></div>
+
+      <!-- 4 -->
+      <div class="col-md-3 mb-4 product-card" data-country="India" data-state="Punjab" data-category="Footwear"><a href="product-detail.html?name=Colorful+Sneakers+%26+Sports+Shoes&price=1039&image=images/footwaer4.jpg&desc=Stylish+and+colorful+sneakers+for+everyday+use">
+        <div class="card"><img src="images/footwaer4.jpg" class="card-img-top" alt="Colorful Sneakers & Sports Shoes">
+          </a>
+          <div class="card-body"><h5 class="card-title">Colorful Sneakers & Sports Shoes</h5>
+            <p class="card-text">Price: ₹1039</p>
+            <button class="btn btn-primary add-to-cart"
+        data-name="Casual Slip-Ons & Flats"
+        data-price="1079"
+        data-image="images/footwaer2.jpg">
+        Add to Cart
+      </button>
+          </div></div></div>
+
+      <!-- 5 -->
+      <div class="col-md-3 mb-4 product-card" data-country="Kenya" data-state="Narok" data-category="Footwear"><a href="product-detail.html?name=Traditional+Maasai+Sandals+(Kenya)&price=1019&image=images/footwaer5.jpg&desc=Handmade+Maasai+sandals+from+Kenya,+full+of+heritage">
+        <div class="card"><img src="images/footwaer5.jpg" class="card-img-top" alt="Traditional Maasai Sandals (Kenya)">
+          </a>
+          <div class="card-body"><h5 class="card-title">Traditional Maasai Sandals (Kenya)</h5>
+            <p class="card-text">Price: ₹1019</p>
+            <button class="btn btn-primary add-to-cart"
+        data-name="Traditional Maasai Sandals (Kenya)"
+        data-price="1019"
+        data-image="images/footwaer5.jpg">
+        Add to Cart
+      </button>
+          </div></div></div>
+
+      <!-- 6 -->
+      <div class="col-md-3 mb-4 product-card" data-country="India" data-state="Maharashtra" data-category="Footwear"><a href="product-detail.html?name=Men's+Formal+Leather+Shoes&price=999&image=images/footwaer6.jpg&desc=Premium+leather+formal+shoes+for+men">
+        <div class="card"><img src="images/footwaer6.jpg" class="card-img-top" alt="Men's Formal Leather Shoes">
+          </a>
+          <div class="card-body"><h5 class="card-title">Men's Formal Leather Shoes</h5>
+            <p class="card-text">Price: ₹999</p>
+            <button class="btn btn-primary add-to-cart"
+        data-name="Men's Formal Leather Shoes"
+        data-price="999"
+        data-image="images/footwaer6.jpg">
+        Add to Cart
+      </button>
+          </div></div></div>
+
+      <!-- 7 -->
+      <div class="col-md-3 mb-4 product-card" data-country="India" data-state="Punjab" data-category="Footwear"><a href="product-detail.html?name=Ethnic+Punjabi+Juttis&price=979&image=images/footwaer7.jpg&desc=Traditional+Punjabi+Juttis+with+intricate+embroidery">
+        <div class="card"><img src="images/footwaer7.jpg" class="card-img-top" alt="Ethnic Punjabi Juttis">
+          </a>
+          <div class="card-body"><h5 class="card-title">Ethnic Punjabi Juttis</h5>
+            <p class="card-text">Price: ₹979</p>
+            <button class="btn btn-primary add-to-cart"
+        data-name="Ethnic Punjabi Juttis"
+        data-price="979"
+        data-image="images/footwaer7.jpg">
+        Add to Cart
+      </button>
+          </div></div></div>
+
+      <!-- 8 -->
+      <div class="col-md-3 mb-4 product-card" data-country="India" data-state="Maharashtra" data-category="Footwear"><a href="product-detail.html?name=Traditional+Kolhapuri+Chappals&price=959&image=images/footwaer8.jpg&desc=Authentic+Kolhapuri+leather+chappals">
+        <div class="card"><img src="images/footwaer8.jpg" class="card-img-top" alt="Traditional Kolhapuri Chappals">
+          </a>
+          <div class="card-body"><h5 class="card-title">Traditional Kolhapuri Chappals</h5>
+            <p class="card-text">Price: ₹959</p>
+            <button class="btn btn-primary add-to-cart"
+        data-name="Traditional Kolhapuri Chappals"
+        data-price="959"
+        data-image="images/footwaer8.jpg">
+        Add to Cart
+      </button>
+          </div></div></div>
+
+      <!-- 9 -->
+      <div class="col-md-3 mb-4 product-card" data-country="India" data-state="Rajasthan" data-category="Footwear"><a href="product-detail.html?name=Traditional+Mojari+Sandals&price=939&image=images/footwaer9.jpg&desc=Stylish+Rajasthani+Mojaris+with+ethnic+designs">
+        <div class="card"><img src="images/footwaer9.jpg" class="card-img-top" alt="Traditional Mojari Sandals">
+          </a>
+          <div class="card-body"><h5 class="card-title">Traditional Mojari Sandals</h5>
+            <p class="card-text">Price: ₹939</p>
+            <button class="btn btn-primary add-to-cart"
+        data-name="Traditional Mojari Sandals"
+        data-price="939"
+        data-image="images/footwaer9.jpg">
+        Add to Cart
+      </button>
+          </div></div></div>
+
+      <!-- 10 -->
+      <div class="col-md-3 mb-4 product-card" data-country="India" data-state="Tamil Nadu" data-category="Footwear"><a href="product-detail.html?name=Men's+Black+Derby+Shoes&price=919&image=images/footwaer10.jpg&desc=Classic+black+Derby+shoes+for+formal+occasions">
+        <div class="card"><img src="images/footwaer10.jpg" class="card-img-top" alt="Men's Black Derby Shoes">
+          </a>
+          <div class="card-body"><h5 class="card-title">Men's Black Derby Shoes</h5>
+            <p class="card-text">Price: ₹919</p>
+            <button class="btn btn-primary add-to-cart"
+        data-name="Men's Black Derby Shoes"
+        data-price="919"
+        data-image="images/footwaer10.jpg">
+        Add to Cart
+      </button>
+          </div></div></div>
+    </div>
+
+
+    <!-- SOUVENIR SECTION -->
+    <h2>Souvenirs</h2>
+    <div class="row">
+      <!-- 10 Souvenir Cards -->
+
+      <!-- 1 -->
+      <div class="col-md-3 mb-4 product-card" data-country="India" data-state="Rajasthan" data-category="Souvenirs"><a href="product-detail.html?name=Colorful+Lac+Bangles&price=599&image=images/souvenir1.jpg&desc=Traditional+Indian+lac+bangles+in+vibrant+colors">
+        <div class="card"><img src="images/souvenir1.jpg" class="card-img-top" alt="Colorful Lac Bangles">
+          </a>
+          <div class="card-body"><h5 class="card-title">Colorful Lac Bangles</h5>
+            <p class="card-text">Price: ₹599</p>
+            <button class="btn btn-primary add-to-cart"
+        data-name="Colorful Lac Bangles"
+        data-price="599"
+        data-image="images/souvenir1.jpg">
+        Add to Cart
+      </button>
+          </div></div></div>
+
+      <!-- 2 -->
+      <div class="col-md-3 mb-4 product-card" data-country="India" data-state="Delhi" data-category="Souvenirs"><a href="product-detail.html?name=Handcrafted+Metal+Fridge+Magnets&price=579&image=images/souvenir2.jpg&desc=Unique+metal+fridge+magnets+with+local+art+designs">
+        <div class="card"><img src="images/souvenir2.jpg" class="card-img-top" alt="Handcrafted Metal Fridge Magnets">
+          </a>
+          <div class="card-body"><h5 class="card-title">Handcrafted Metal Fridge Magnets</h5>
+            <p class="card-text">Price: ₹579</p>
+            <button class="btn btn-primary add-to-cart"
+        data-name="Handcrafted Metal Fridge Magnets"
+        data-price="579"
+        data-image="images/souvenir2.jpg">
+        Add to Cart
+      </button>
+          </div></div></div>
+
+      <!-- 3 -->
+      <div class="col-md-3 mb-4 product-card" data-country="India" data-state="Rajasthan" data-category="Souvenirs"><a href="product-detail.html?name=Rajasthani+Painted+Pottery+Souvenirs&price=559&image=images/souvenir3.jpg&desc=Hand-painted+ceramic+souvenirs+from+Rajasthan">
+        <div class="card"><img src="images/souvenir3.jpg" class="card-img-top" alt="Rajasthani Painted Pottery Souvenirs">
+          </a>
+          <div class="card-body"><h5 class="card-title">Rajasthani Painted Pottery Souvenirs</h5>
+            <p class="card-text">Price: ₹559</p>
+            <button class="btn btn-primary add-to-cart"
+        data-name="Rajasthani Painted Pottery Souvenirs"
+        data-price="559"
+        data-image="images/souvenir3.jpg">
+        Add to Cart
+      </button>
+          </div></div></div>
+
+      <!-- 4 -->
+      <div class="col-md-3 mb-4 product-card" data-country="India" data-state="West Bengal" data-category="Souvenirs"><a href="product-detail.html?name=Handwoven+Cane+Baskets&price=539&image=images/souvenir4.jpg&desc=Eco-friendly+handwoven+cane+baskets+for+home+decor">
+        <div class="card"><img src="images/souvenir4.jpg" class="card-img-top" alt="Handwoven Cane Baskets">
+          </a>
+          <div class="card-body"><h5 class="card-title">Handwoven Cane Baskets</h5>
+            <p class="card-text">Price: ₹539</p>
+            <button class="btn btn-primary add-to-cart"
+        data-name="Handwoven Cane Baskets"
+        data-price="539"
+        data-image="images/souvenir4.jpg">
+        Add to Cart
+      </button>
+          </div></div></div>
+
+      <!-- 5 -->
+      <div class="col-md-3 mb-4 product-card" data-country="China" data-state="Guangdong" data-category="Souvenirs"><a href="product-detail.html?name=Cultural+Doll+Figurines&price=519&image=images/souvenir5.jpg&desc=Colorful+dolls+representing+regional+cultures+of+India">
+        <div class="card"><img src="images/souvenir5.jpg" class="card-img-top" alt="Cultural Doll Figurines">
+          </a>
+          <div class="card-body"><h5 class="card-title">Cultural Doll Figurines</h5>
+            <p class="card-text">Price: ₹519</p>
+            <button class="btn btn-primary add-to-cart"
+        data-name="Cultural Doll Figurines"
+        data-price="519"
+        data-image="images/souvenir5.jpg">
+        Add to Cart
+      </button>
+          </div></div></div>
+
+      <!-- 6 -->
+      <div class="col-md-3 mb-4 product-card" data-country="France" data-state="Île-de-France" data-category="Souvenirs"><a href="product-detail.html?name=Eiffel+Tower+Miniatures&price=499&image=images/souvenir6.jpg&desc=Miniature+Eiffel+Towers,+perfect+for+Paris+souvenir+collection">
+        <div class="card"><img src="images/souvenir6.jpg" class="card-img-top" alt="Eiffel Tower Miniatures">
+          </a>
+          <div class="card-body"><h5 class="card-title">Eiffel Tower Miniatures</h5>
+            <p class="card-text">Price: ₹499</p>
+            <button class="btn btn-primary add-to-cart"
+        data-name="Eiffel Tower Miniatures"
+        data-price="499"
+        data-image="images/souvenir6.jpg">
+        Add to Cart
+      </button>
+          </div></div></div>
+
+      <!-- 7 -->
+      <div class="col-md-3 mb-4 product-card" data-country="France" data-state="Île-de-France" data-category="Souvenirs"><a href="product-detail.html?name=Paris+Landmark+Keychains&price=479&image=images/souvenir7.jpg&desc=Keychains+featuring+popular+Paris+monuments">
+        <div class="card"><img src="images/souvenir7.jpg" class="card-img-top" alt="Paris Landmark Keychains">
+          </a>
+          <div class="card-body"><h5 class="card-title">Paris Landmark Keychains</h5>
+            <p class="card-text">Price: ₹479</p>
+            <button class="btn btn-primary add-to-cart"
+        data-name="Paris Landmark Keychains"
+        data-price="479"
+        data-image="images/souvenir7.jpg">
+        Add to Cart
+      </button>
+          </div></div></div>
+
+      <!-- 8 -->
+      <div class="col-md-3 mb-4 product-card" data-country="India" data-state="Kerala" data-category="Souvenirs"><a href="product-detail.html?name=Hand-Carved+Wooden+Balls&price=459&image=images/souvenir8.jpg&desc=Decorative+wooden+balls,+hand-carved+with+tribal+art">
+        <div class="card"><img src="images/souvenir8.jpg" class="card-img-top" alt="Hand-Carved Wooden Balls">
+          </a>
+          <div class="card-body"><h5 class="card-title">Hand-Carved Wooden Balls</h5>
+            <p class="card-text">Price: ₹459</p>
+            <button class="btn btn-primary add-to-cart"
+        data-name="Hand-Carved Wooden Balls"
+        data-price="459"
+        data-image="images/souvenir8.jpg">
+        Add to Cart
+      </button>
+          </div></div></div>
+
+      <!-- 9 -->
+      <div class="col-md-3 mb-4 product-card" data-country="India" data-state="Rajasthan" data-category="Souvenirs"><div class="card"><a href="product-detail.html?name=Traditional+Rajasthani+Wall+Hangings&price=439&image=images/souvenir9.jpg&desc=Wall+decor+with+traditional+Rajasthani+embroidery">
+        <img src="images/souvenir9.jpg" class="card-img-top" alt="Traditional Rajasthani Wall Hangings">
+          </a>
+          <div class="card-body"><h5 class="card-title">Traditional Rajasthani Wall Hangings</h5>
+            <p class="card-text">Price: ₹439</p>
+            <button class="btn btn-primary add-to-cart"
+        data-name="Traditional Rajasthani Wall Hangings"
+        data-price="439"
+        data-image="images/souvenir9.jpg">
+        Add to Cart
+      </button>
+          </div></div></div>
+
+      <!-- 10 -->
+      <div class="col-md-3 mb-4 product-card" data-country="India" data-state="Maharashtra" data-category="Souvenirs"><div class="card"><a href="product-detail.html?name=Indian+Traditional+Sweets+Box&price=419&image=images/souvenir10.jpg&desc=Gift+box+containing+authentic+Indian+sweets">
+      <img src="images/souvenir10.jpg" class="card-img-top" alt="Indian Traditional Sweets Box">
+          </a>
+          <div class="card-body"><h5 class="card-title">Indian Traditional Sweets Box</h5>
+            <p class="card-text">Price: ₹419</p>
+            <button class="btn btn-primary add-to-cart"
+        data-name="Indian Traditional Sweets Box"
+        data-price="419"
+        data-image="images/souvenir10.jpg">
+        Add to Cart
+      </button>
+          </div></div></div>
+    </div>
+<script>
+  let allProducts = [];
+
+  fetch('http://localhost:3000/api/products')
+    .then(res => res.json())
+    .then(products => {
+      allProducts = products;
+      renderProducts(allProducts);
+    });
+
+  function renderProducts(products) {
+    const clothingContainer = document.getElementById("clothing-list");
+    const footwearContainer = document.getElementById("footwear-list");
+    const souvenirsContainer = document.getElementById("souvenirs-list");
+
+    clothingContainer.innerHTML = '';
+    footwearContainer.innerHTML = '';
+    souvenirsContainer.innerHTML = '';
+
+    products.forEach(product => {
+      const productCard = `
+        <div class="col-md-3 mb-4 product-card"
+             data-country="${product.country}" 
+             data-state="${product.state}" 
+             data-category="${product.category}">
+          <div class="card">
+            <img src="images/${product.image}" class="card-img-top" alt="${product.title}">
+            <div class="card-body">
+              <h5 class="card-title">${product.title}</h5>
+              <p class="card-text">Price: ₹${product.price}</p>
+              <button class="btn btn-primary add-to-cart"
+                      data-name="${product.title}"
+                      data-price="${product.price}"
+                      data-image="${product.image}">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+
+      if (product.category === "clothing") {
+        clothingContainer.innerHTML += productCard;
+      } else if (product.category === "footwear") {
+        footwearContainer.innerHTML += productCard;
+      } else if (product.category === "souvenirs") {
+        souvenirsContainer.innerHTML += productCard;
+      }
+    });
+  }
+
+  // ✅ Event Delegation for Add to Cart
+  document.addEventListener('click', function (e) {
+    if (e.target && e.target.classList.contains('add-to-cart')) {
+      e.preventDefault();
+      const button = e.target;
+      const name = button.getAttribute('data-name');
+      const price = button.getAttribute('data-price');
+      const image = button.getAttribute('data-image');
+
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ name, price, image });
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      alert(`${name} added to cart!`);
+    }
+  }); // small delay to wait for DOM update
+
+
+  
+
+  // Filter change event handlers
+  const countryFilter = document.getElementById('countryFilter');
+  const stateFilter = document.getElementById('stateFilter');
+  const categoryFilter = document.getElementById('categoryFilter');
+
+  function applyFilters() {
+    const country = countryFilter.value.toLowerCase();
+    const state = stateFilter.value.toLowerCase();
+    const category = categoryFilter.value.toLowerCase();
+
+    document.querySelectorAll('.product-card').forEach(card => {
+      const cardCountry = card.getAttribute('data-country').toLowerCase();
+      const cardState = card.getAttribute('data-state').toLowerCase();
+      const cardCategory = card.getAttribute('data-category').toLowerCase();
+
+      const matchCountry = !country || cardCountry === country;
+      const matchState = !state || cardState === state;
+      const matchCategory = !category || cardCategory === category;
+
+      if (matchCountry && matchState && matchCategory) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  countryFilter.addEventListener('change', applyFilters);
+  stateFilter.addEventListener('change', applyFilters);
+  categoryFilter.addEventListener('change', applyFilters);
+</script>
+
+
+  </div>
+</body>
+</html>
