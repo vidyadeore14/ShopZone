@@ -14,17 +14,6 @@ connectDB();
 const User = require('./models/User');
 const Product = require('./models/Product');
 
-// ➕ SAVE USER
-const user = new User({
-  name: "Vidya",
-  email: "vidyadere47@gmail.com",
-  password: "sanjay123",
-  address: "Pune"
-});
-
-user.save()
-  .then(() => console.log("✅ User saved"))
-  .catch(err => console.error("❌ Error saving user:", err));
 
 // 🔍 GET ALL PRODUCTS (प्रत्येक वेळी चेक करण्यासाठी)
 Product.find()
