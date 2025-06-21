@@ -228,7 +228,9 @@ if (req.method === 'POST' && parsedUrl.pathname === '/api/order') {
 
 const { spawn } = require('child_process');
 
-// Run on port 3001
-server.listen(3000, () => {
-  console.log('Server running at http://localhost:3000');
+// ✅ Run on dynamic port for Render
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+  console.log(`✅ Server running on port ${PORT}`);
 });
+
