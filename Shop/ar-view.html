@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AR Preview - T-shirt</title>
+    <!-- A-Frame + AR.js -->
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/2.2.1/aframe/build/aframe-ar.min.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs>
+      
+      <!-- Light + Camera -->
+      <a-light type="ambient" color="#ffffff"></a-light>
+      <a-camera-static></a-camera-static>
+
+      <!-- ✅ Marker + 3D Model -->
+      <a-marker type="pattern" url="pattern-clothing1.patt">
+        <a-entity 
+          gltf-model="models/clothing1.glb"
+          scale="0.5 0.5 0.5"
+          position="0 0 0"
+          rotation="0 0 0">
+        </a-entity>
+      </a-marker>
+
+      <a-scene embedded arjs>
+  <a-light type="ambient" color="#ffffff"></a-light>
+  <a-camera-static></a-camera-static>
+
+  <a-marker type="pattern" url="pattern-souvenir6.patt">
+    <a-entity 
+      gltf-model="models/souvenir6.glb"
+      scale="0.5 0.5 0.5"
+      position="0 0 0"
+      rotation="0 0 0">
+    </a-entity>
+  </a-marker>
+
+  <a-entity camera></a-entity>
+</a-scene>
+
+      <!-- Default camera (fallback) -->
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
