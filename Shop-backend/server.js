@@ -25,6 +25,14 @@ const usersFile = path.join(__dirname, 'data', 'users.json');
 const reviewsFile = path.join(__dirname, 'data', 'reviews.json');
 
 const server = http.createServer((req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+  if (req.method === "OPTIONS") {
+    res.writeHead(204);
+    return res.end();
+  }
   const parsedUrl = url.parse(req.url, true);
 
   // Recommendation API (GET /api/recommend?name=PRODUCT_NAME)
@@ -92,6 +100,8 @@ if (req.method === 'GET' && parsedUrl.pathname === '/api/recommend') {
       return;
     }
   }
+
+
 
   // Registration
   // ✅ Registration with MongoDB
