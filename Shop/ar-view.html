@@ -12,7 +12,7 @@
     <!-- Ambient Light -->
     <a-light type="ambient" color="#ffffff"></a-light>
 
-    <!-- ✅ Marker for Clothing (e.g. T-shirt) -->
+    <!-- ✅ Custom Marker for Clothing -->
     <a-marker type="pattern" url="Shop/pattern-clothing1.patt">
       <a-entity 
         gltf-model="Shop/models/clothing1.glb"
@@ -22,10 +22,20 @@
       </a-entity>
     </a-marker>
 
-    <!-- ✅ Marker for Souvenir (e.g. Eiffel Tower) -->
+    <!-- ✅ Custom Marker for Souvenir -->
     <a-marker type="pattern" url="Shop/pattern-souvenir6.patt">
       <a-entity 
         gltf-model="Shop/models/souvenir6.glb"
+        scale="5 5 5"
+        position="0 0 0"
+        rotation="0 0 0">
+      </a-entity>
+    </a-marker>
+
+    <!-- ✅ Hiro Marker for Testing -->
+    <a-marker preset="hiro">
+      <a-entity 
+        gltf-model="Shop/models/clothing1.glb"
         scale="5 5 5"
         position="0 0 0"
         rotation="0 0 0">
