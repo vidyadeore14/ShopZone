@@ -75,7 +75,7 @@ if (req.method === 'GET' && parsedUrl.pathname === '/api/recommend') {
   if (req.method === 'GET') {
     const filePath = path.join(__dirname, '../Shop', parsedUrl.pathname === '/' ? 'index.html' : parsedUrl.pathname);
     const ext = path.extname(filePath);
-    const allowedExt = ['.html', '.css', '.js', '.jpg', '.jpeg', '.png', '.gif'];
+    const allowedExt = ['.html', '.css', '.js', '.jpg', '.jpeg', '.png', '.gif', '.glb', '.patt'];
 
     if (allowedExt.includes(ext)) {
       fs.readFile(filePath, (err, content) => {
@@ -91,8 +91,10 @@ if (req.method === 'GET' && parsedUrl.pathname === '/api/recommend') {
           '.jpg': 'image/jpeg',
           '.jpeg': 'image/jpeg',
           '.png': 'image/png',
-          '.gif': 'image/gif'
-        }[ext] || 'text/plain';
+          '.gif': 'image/gif',
+          '.glb': 'model/gltf-binary',
+          '.patt': 'application/octet-stream' // ✅ add this line
+        }[ext] || 'application/octet-stream';
 
         res.writeHead(200, { 'Content-Type': contentType });
         res.end(content);
