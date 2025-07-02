@@ -5,6 +5,16 @@ const url = require('url');
 const qs = require('querystring');
 require('dotenv').config();
 
+// ✅ Razorpay Integration
+require('dotenv').config();
+
+const Razorpay = require('razorpay');
+const razorpay = new Razorpay({
+  key_id: process.env.RAZORPAY_KEY_ID,
+  key_secret: process.env.RAZORPAY_SECRET_KEY
+});
+
+
 
 // ✅ Connect MongoDB
 const connectDB = require('./db');
@@ -220,6 +230,31 @@ if (req.method === 'POST' && parsedUrl.pathname === '/api/order') {
     // TODO: Save to DB or start Razorpay flow
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end('Order placed successfully!');
+  });
+  return;
+}
+
+// ✅ Razorpay Order Creation
+if (req.method === 'POST' && parsedUrl.pathname === '/api/create-order') {
+  let body = '';
+  req.on('data', chunk => body += chunk);
+  req.on('end', async () => {
+    try {
+      const { amount } = JSON.parse(body);
+      const order = await razorpay.orders.create({
+        amount: Number(amount) * 100,  // Razorpay expects paise
+        currency: 'INR',
+        receipt: 'receipt_' + Date.now(),
+        payment_capture: 1
+      });
+
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify(order));
+    } catch (err) {
+      console.error(err);
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'Error creating order' }));
+    }
   });
   return;
 }
