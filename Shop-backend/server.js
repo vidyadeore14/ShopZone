@@ -5,9 +5,10 @@ const url = require('url');
 const qs = require('querystring');
 require('dotenv').config();
 
-// ✅ Razorpay Integration
-require('dotenv').config();
+// ✅ Orders file path
+const ordersFile = path.join(__dirname, 'data', 'orders.json');
 
+// ✅ Razorpay Integration
 const Razorpay = require('razorpay');
 const razorpay = new Razorpay({
   key_id: process.env.RAZORPAY_KEY_ID,
@@ -256,6 +257,51 @@ if (req.method === 'POST' && parsedUrl.pathname === '/api/create-order') {
       res.end(JSON.stringify({ error: 'Error creating order' }));
     }
   });
+  return;
+}
+
+if (req.method === 'POST' && parsedUrl.pathname === '/api/order') {
+  let body = '';
+  req.on('data', chunk => body += chunk);
+  req.on('end', () => {
+    const { name, phone, address } = JSON.parse(body);
+
+    const trackingId = 'TRK' + Math.floor(100000 + Math.random() * 900000); // ✅ Random tracking ID
+
+    const order = {
+      name,
+      phone,
+      address,
+      trackingId,
+      status: "Order Placed",
+      date: new Date().toISOString()
+    };
+
+    let orders = fs.existsSync(ordersFile)
+      ? JSON.parse(fs.readFileSync(ordersFile, 'utf-8'))
+      : [];
+
+    orders.push(order);
+
+    fs.writeFileSync(ordersFile, JSON.stringify(orders, null, 2));
+
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ message: 'Order placed successfully!', trackingId }));
+  });
+  return;
+}
+
+
+
+if (req.method === 'GET' && parsedUrl.pathname === '/api/track') {
+  const query = new URLSearchParams(parsedUrl.query);
+  const trackingId = query.get('trackingId');
+
+  const orders = fs.existsSync('orders.json') ? JSON.parse(fs.readFileSync('orders.json', 'utf-8')) : [];
+  const order = orders.find(o => o.trackingId === trackingId);
+
+  res.writeHead(200, { 'Content-Type': 'application/json' });
+  res.end(JSON.stringify(order || {}));
   return;
 }
 

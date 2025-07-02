@@ -28,7 +28,18 @@
   <div class="container mt-5 text-center">
     <h2>🎉 Thank you for your order!</h2>
     <p>Your payment was successful. We'll ship your products soon.</p>
+    <!-- ✅ Tracking ID Display -->
+  <h4 class="mt-4">📦 Your Tracking ID:</h4>
+  <p><strong id="trackId">Loading...</strong></p>
+
     <a href="index.html" class="btn btn-primary mt-3">Continue Shopping</a>
+    <a href="track-order.html" class="btn btn-outline-secondary mt-3 ms-2">Track Your Order</a>
   </div>
+
+  <script>
+  const trackingId = localStorage.getItem('trackingId'); // 👉 तुझ्या JS कडून सेट केलेली value
+  document.getElementById('trackId').textContent = trackingId || 'Unavailable';
+</script> 
+
 </body>
 </html>
