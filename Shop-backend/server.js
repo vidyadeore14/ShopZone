@@ -5,8 +5,6 @@ const url = require('url');
 const qs = require('querystring');
 require('dotenv').config();
 
-// ✅ Orders file path
-const ordersFile = path.join(__dirname, 'data', 'orders.json');
 
 // ✅ Razorpay Integration
 const Razorpay = require('razorpay');

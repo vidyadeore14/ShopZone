@@ -20,15 +20,37 @@
     const totalAmount = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
     const options = {
-      "key": "rzp_live_TMIZE5RYjjemaO", // ✅ Live/Test Key
+      "key": "rzp_live_TMIZE5RYjjemaO", // ✅ Replace with your Live/Test Key
       "amount": totalAmount * 100, // Convert to paisa
       "currency": "INR",
       "name": "ShopZone",
       "description": "Order Payment",
-      "handler": function (response){
+
+      "handler": function (response) {
         alert("✅ Payment Successful!\nPayment ID: " + response.razorpay_payment_id);
-        window.location.href = "order-confirmed.html";
+
+        fetch("https://shopzone-backend-6qfu.onrender.com/api/order", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: userDetails.name,
+            phone: userDetails.phone,
+            address: userDetails.address
+          })
+        })
+        .then(res => res.json())
+        .then(data => {
+          if (data.trackingId) {
+            localStorage.setItem("trackingId", data.trackingId);
+          }
+          window.location.href = "order-confirmed.html";
+        })
+        .catch(err => {
+          alert("❌ Payment done but order failed. Please contact support.");
+          window.location.href = "index.html";
+        });
       },
+
       "prefill": {
         "name": userDetails.name,
         "email": "test@example.com",
@@ -42,7 +64,7 @@
       }
     };
 
-    var rzp = new Razorpay(options);
+    const rzp = new Razorpay(options);
     rzp.open();
   </script>
 </body>
