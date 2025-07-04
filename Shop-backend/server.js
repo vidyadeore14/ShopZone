@@ -22,6 +22,8 @@ connectDB();
 // MODELS
 const User = require('./models/User');
 const Product = require('./models/Product');
+const Order = require('./models/order');  // ✅ Add this at the top with other models
+
 
 
 // 🔍 GET ALL PRODUCTS (प्रत्येक वेळी चेक करण्यासाठी)
@@ -215,24 +217,6 @@ if (req.method === 'POST' && parsedUrl.pathname === '/api/payment') {
   });
   return;
 }
-
-  // ✅ PLACE ORDER
-if (req.method === 'POST' && parsedUrl.pathname === '/api/order') {
-  let body = '';
-  req.on('data', chunk => body += chunk);
-  req.on('end', () => {
-    const { name, phone, address } = JSON.parse(body);
-
-    // ✅ Print received order for now
-    console.log('🛒 Order received:', { name, phone, address });
-
-    // TODO: Save to DB or start Razorpay flow
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Order placed successfully!');
-  });
-  return;
-}
-
 // ✅ Razorpay Order Creation
 if (req.method === 'POST' && parsedUrl.pathname === '/api/create-order') {
   let body = '';
@@ -258,39 +242,34 @@ if (req.method === 'POST' && parsedUrl.pathname === '/api/create-order') {
   return;
 }
 
-if (req.method === 'POST' && parsedUrl.pathname === '/api/order') {
+  if (req.method === 'POST' && parsedUrl.pathname === '/api/order') {
   let body = '';
   req.on('data', chunk => body += chunk);
-  req.on('end', () => {
-    const { name, phone, address } = JSON.parse(body);
+  req.on('end', async () => {
+    try {
+      const { userId, items, totalAmount, trackingId, shippingAddress } = JSON.parse(body);
 
-    const trackingId = 'TRK' + Math.floor(100000 + Math.random() * 900000); // ✅ Random tracking ID
+      const newOrder = new Order({
+        userId,
+        items,
+        totalAmount,
+        trackingId,
+        shippingAddress,
+        status: "Order Confirmed"
+      });
 
-    const order = {
-      name,
-      phone,
-      address,
-      trackingId,
-      status: "Order Placed",
-      date: new Date().toISOString()
-    };
+      await newOrder.save();
 
-    let orders = fs.existsSync(ordersFile)
-      ? JSON.parse(fs.readFileSync(ordersFile, 'utf-8'))
-      : [];
-
-    orders.push(order);
-
-    fs.writeFileSync(ordersFile, JSON.stringify(orders, null, 2));
-
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ message: 'Order placed successfully!', trackingId }));
+      res.writeHead(201, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ message: "Order placed", trackingId }));
+    } catch (err) {
+      console.error("❌ Failed to save order:", err);
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: "Order save failed" }));
+    }
   });
   return;
 }
-
-
-
 if (req.method === 'GET' && parsedUrl.pathname === '/api/track') {
   const query = new URLSearchParams(parsedUrl.query);
   const trackingId = query.get('trackingId');

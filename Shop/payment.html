@@ -29,23 +29,35 @@
       "handler": function (response) {
         alert("✅ Payment Successful!\nPayment ID: " + response.razorpay_payment_id);
 
+        const orderItems = cart.map(item => ({
+          productId: item._id,
+          quantity: item.quantity
+        }));
+
+        const trackingId = "TZ" + Date.now(); // generate tracking ID
+
         fetch("https://shopzone-backend-6qfu.onrender.com/api/order", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            name: userDetails.name,
-            phone: userDetails.phone,
-            address: userDetails.address
+            userId: userDetails.userId || "guest", // fallback if userId not present
+            items: orderItems,
+            totalAmount: totalAmount,
+            trackingId: trackingId,
+            shippingAddress: {
+              name: userDetails.name,
+              phone: userDetails.phone,
+              address: userDetails.address
+            }
           })
         })
         .then(res => res.json())
         .then(data => {
-          if (data.trackingId) {
-            localStorage.setItem("trackingId", data.trackingId);
-          }
+          localStorage.setItem("trackingId", trackingId);
           window.location.href = "order-confirmed.html";
         })
         .catch(err => {
+          console.error("Order Save Failed:", err);
           alert("❌ Payment done but order failed. Please contact support.");
           window.location.href = "index.html";
         });
